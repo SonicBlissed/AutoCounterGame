@@ -20,7 +20,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      {/* <h1>The Counter That Keeps On Counting</h1> */}
       <PersistentDrawerRight state={state} setState={setState}/>
       <Counter state={state} setState={setState}/>
 

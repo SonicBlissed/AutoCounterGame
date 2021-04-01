@@ -2,8 +2,8 @@ import './counterApp.css'
 import React, { useEffect, useState } from "react";
 import { setLockrCounter, saveLockr} from "../Hooks/hooks";
 let commaNumber = require('comma-number');
-//process for adding a new minion type:
-//create state, create cost calculator, create onclick, add to the interval loop, add button, add to the save hook, create a hook to set to lockr.
+
+
 const Counter = (props) => {
 
  
@@ -41,7 +41,8 @@ const perSecond = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+    // eslint-disable-next-line
+  },[]);
   
 saveLockr(state);
 
