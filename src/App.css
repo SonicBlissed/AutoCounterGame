@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,9 +14,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
-  background-color: #282c34;
+  background-color: #c11a2b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +36,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App h1{
+  /* font-size: 5rem; */
+  text-align: center;
+  /* line-height: 20vh; */
+  color: #fcedd8;
+  font-family: 'Niconne', cursive;
+  /* font-weight: 700; */
+  text-shadow: 1px 1px 0px #eb452b, 
+  3px 3px 0px #efa032; 
+  /* 6px 6px 0px #46b59b, 
+  9px 9px 0px #017e7f, 
+  12px 12px 0px #052939,
+  15px 15px 0px #c11a2b; */
+  display: flex;
+  border: solid;
+  position: absolute;
+  top: 0px;
+  
 }

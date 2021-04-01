@@ -1,4 +1,3 @@
-import React from "react";
 import Lockr from "lockr";
 
 const setLockrCounter = (state) => {
@@ -9,16 +8,49 @@ const setLockrMinions = (state) => {
   Lockr.set("minions", state.minions + 1);
 };
 
-const saveLockr = (state) => {
-  Lockr.set("counter", state.counter);
-  Lockr.set('minions', state.minions)
+const setLockrMinionSupervisor = (state) => {
+  Lockr.set("minionSupervisors", state.minionSupervisors + 1);
 };
 
+const setLockrMinionManager = (state) => {
+  Lockr.set("minionManagers", state.minionManagers + 1);
+};
 
-const loadLockr = () => {
-    const savedDataCounter = Lockr.get('counter');
-    const savedDataMinions = Lockr.get('minions');
-    
-}
+const setLockrGrandma = (state) => {
+  Lockr.set("grandmas", state.grandmas + 1);
+};
 
-export { setLockrCounter, setLockrMinions, saveLockr };
+const setLockrDad = (state) => {
+  Lockr.set("dads", state.dads + 1);
+};
+
+const setLockrAlien = (state) => {
+  Lockr.set("aliens", state.aliens + 1);
+};
+
+const setLockrAngel = (state) => {
+  Lockr.set("angels", state.angels + 1);
+};
+
+const saveLockr = (state) => {
+  Lockr.set("counter", state.counter);
+  Lockr.set("minions", state.minions);
+  Lockr.set("minionSupervisors", state.minionSupervisors);
+  Lockr.set("minionManagers", state.minionManagers);
+  Lockr.set("grandmas", state.grandmas);
+  Lockr.set("dads", state.dads);
+  Lockr.set("aliens", state.aliens);
+  Lockr.set("angels", state.angels);
+};
+
+export {
+  setLockrCounter,
+  setLockrMinions,
+  saveLockr,
+  setLockrMinionSupervisor,
+  setLockrMinionManager,
+  setLockrGrandma,
+  setLockrDad,
+  setLockrAlien,
+  setLockrAngel,
+};

@@ -1,28 +1,41 @@
-import React, { useState, useEffect } from "react";
-import Lockr from "lockr";
-import { setLockrCounter, setLockrMinions, saveLockr } from "../Hooks/hooks";
+import './counterApp.css'
+import React, { useEffect, useState } from "react";
+import { setLockrCounter, saveLockr} from "../Hooks/hooks";
+let commaNumber = require('comma-number');
+//process for adding a new minion type:
+//create state, create cost calculator, create onclick, add to the interval loop, add button, add to the save hook, create a hook to set to lockr.
+const Counter = (props) => {
 
-const Counter = () => {
-  const [state, setState] = useState({
-    minions: Lockr.get('minions'),
-    counter: Lockr.get('counter'),
-  });
+ 
+const {state, setState} = props
+const [press, setPress] = useState(false)
 
-  // let minionCost = state.minions * 10 + 6;
-
-  let costCalculator = () => {
-    if (state.minions < 20){
-      return state.minions * 10 + 6
-    } else {
-      return state.minions * 50
-    }
-  }
+const perSecond = () => {
+  return state.minions +
+   (state.minionSupervisors*3) +
+    (state.minionManagers * 9) + 
+    (state.grandmas * 12) + 
+    (state.dads * 17) + 
+    (state.aliens * 25) +
+    (state.angels * 75);
+}
+ 
 
   useEffect(() => {
     const timer = setInterval(() => {
       setState((state) => ({
         minions: state.minions,
-        counter: state.counter + state.minions,
+        counter: state.counter + state.minions + (state.minionSupervisors*3) + (state.minionManagers * 9) + 
+        (state.grandmas * 12) + 
+        (state.dads * 17) + 
+        (state.aliens * 25) +
+        (state.angels * 75),
+        minionSupervisors: state.minionSupervisors,
+        minionManagers: state.minionManagers,
+        grandmas: state.grandmas,
+        dads: state.dads,
+        aliens: state.aliens,
+        angels: state.angels,
       }));
     }, 1000);
     return () => {
@@ -31,61 +44,47 @@ const Counter = () => {
   }, []);
   
 saveLockr(state);
- 
 
-  function onClickMinion() {
-    if (state.counter < costCalculator()) {
-      console.log(`you don't have ${costCalculator()} to spend`);
+ 
+  const increased = () => {
+    if(press === true){
+      return 'increased'
     } else {
-      setState((state) => ({
-        minions: state.minions + 1,
-        counter: state.counter - costCalculator(),
-      }));
-      setLockrMinions(state);
-      Lockr.set("counter", state.counter - costCalculator());
+      return 'increase'
     }
   }
 
-  const onClickIncrease = (e) => {
+
+  const onClickIncrease = () => {
     setState((state) => ({
       minions: state.minions,
       counter: state.counter + 1,
+      minionSupervisors: state.minionSupervisors,
+      minionManagers: state.minionManagers,
+      grandmas: state.grandmas,
+      dads: state.dads,
+      aliens: state.aliens,
+      angels: state.angels,
+
     }));
     setLockrCounter(state);
+    setPress(true)
+    setTimeout(()=> {
+      setPress(false)
+    },1000)
   };
 
-  const onClickSave = () => {
-    saveLockr(state);
-  };
 
-  const onClickLoad = () => {
-    setState(() => ({
-      minions: Lockr.get("minions"),
-      counter: Lockr.get("counter"),
-    }));
-  };
 
   return (
     <div className="counter">
-      <p>{state.counter}</p>
-      <button className="increase" onClick={onClickIncrease}>
-        Increase
+      <button className={increased()} onClick={onClickIncrease}>
+        <span className='counterText'>
+      {commaNumber(state.counter)}
+        </span>
+      <p>CPS: {perSecond()}</p>
       </button>
-      <div className="shopCard">
-        <h3>Shop</h3>
-        <p>Current Number Of Minions: {state.minions}</p>
-        <button className="minion" onClick={onClickMinion}>
-          Buy A Minion For {costCalculator()}
-        </button>
-        <br />
-        <button className="save_button" onClick={onClickSave}>
-          Save Your Progress
-        </button>
-        <br />
-        <button className="load_button" onClick={onClickLoad}>
-          Load Your Progress
-        </button>
-      </div>
+      <br/>
     </div>
   );
 };
