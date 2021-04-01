@@ -1,58 +1,90 @@
-import React, { useState, useEffect } from "react";
-import Lockr from "lockr";
+import './counterApp.css'
+import React, { useEffect, useState } from "react";
+import { setLockrCounter, saveLockr} from "../Hooks/hooks";
+let commaNumber = require('comma-number');
+//process for adding a new minion type:
+//create state, create cost calculator, create onclick, add to the interval loop, add button, add to the save hook, create a hook to set to lockr.
+const Counter = (props) => {
 
-const Counter = () => {
-    const [state, setState] = useState({
-        minions: 0,
-      counter: 6,
-    });
-    let minionCost = state.minions * 10 + 6;
-  
-      useEffect(() => {
-          const timer = setInterval(() => {
-        setState((state) => ({
-            minions: state.minions,
-          counter: state.counter + state.minions,
-        }));
-      }, 1000);
-      return () => clearInterval(timer);
-    }, [])
-    
-  
-    const onClickMinion = () => {
-      if (state.counter < minionCost) {
-        console.log(`you don't have ${minionCost} to spend`);
-      } else {
-        setState((state) => ({
-            minions: state.minions + 1,
-          counter: state.counter - minionCost,
-        }));
-      }
-    };
+ 
+const {state, setState} = props
+const [press, setPress] = useState(false)
 
-  const onClickIncrease = (e) => {
-    // e.preventDefault();
-    // Lockr.set('counter', counter)
-    setState((state) => ({
+const perSecond = () => {
+  return state.minions +
+   (state.minionSupervisors*3) +
+    (state.minionManagers * 9) + 
+    (state.grandmas * 12) + 
+    (state.dads * 17) + 
+    (state.aliens * 25) +
+    (state.angels * 75);
+}
+ 
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setState((state) => ({
         minions: state.minions,
-        counter: state.counter + 1,
+        counter: state.counter + state.minions + (state.minionSupervisors*3) + (state.minionManagers * 9) + 
+        (state.grandmas * 12) + 
+        (state.dads * 17) + 
+        (state.aliens * 25) +
+        (state.angels * 75),
+        minionSupervisors: state.minionSupervisors,
+        minionManagers: state.minionManagers,
+        grandmas: state.grandmas,
+        dads: state.dads,
+        aliens: state.aliens,
+        angels: state.angels,
+      }));
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  
+saveLockr(state);
+
+ 
+  const increased = () => {
+    if(press === true){
+      return 'increased'
+    } else {
+      return 'increase'
+    }
+  }
+
+
+  const onClickIncrease = () => {
+    setState((state) => ({
+      minions: state.minions,
+      counter: state.counter + 1,
+      minionSupervisors: state.minionSupervisors,
+      minionManagers: state.minionManagers,
+      grandmas: state.grandmas,
+      dads: state.dads,
+      aliens: state.aliens,
+      angels: state.angels,
+
     }));
-    // Lockr.set("counter", counter);
+    setLockrCounter(state);
+    setPress(true)
+    setTimeout(()=> {
+      setPress(false)
+    },1000)
   };
+
+
 
   return (
     <div className="counter">
-      <p>{state.counter}</p>
-      <button className="increase" onClick={onClickIncrease}>
-        Increase
+      <button className={increased()} onClick={onClickIncrease}>
+        <span className='counterText'>
+      {commaNumber(state.counter)}
+        </span>
+      <p>CPS: {perSecond()}</p>
       </button>
-      <div className="shopCard">
-        <h3>Shop</h3>
-        <p>Current Number Of Minions: {state.minions}</p>
-        <button className="minion" onClick={onClickMinion}>
-          Buy A Minion For {minionCost}
-        </button>
-      </div>
+      <br/>
     </div>
   );
 };

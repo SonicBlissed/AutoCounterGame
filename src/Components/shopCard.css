@@ -1,0 +1,14 @@
+.shopCard {
+    display:flex;
+    /* top: 0%; */
+    width:100%;
+    /* height: 100%; */
+    /* background-color: red; */
+    border:none;
+    text-shadow: none;
+}
+.minionCount{
+    display: flex;
+    position: absolute;
+    
+}
