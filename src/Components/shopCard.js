@@ -29,6 +29,7 @@ import {
 import Lockr from "lockr";
 import "./shopCard.css";
 import Button from "@material-ui/core/Button";
+let commaNumber = require('comma-number');
 
 const Shop = (props) => {
   const { state, setState } = props;
@@ -196,12 +197,12 @@ const Shop = (props) => {
         onClick={onClickMinion}
       >
         <h4 className="minionCount">
-          Minions: {state.minions}
+          Minions: {commaNumber(state.minions)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorMinion(state)}
+        {commaNumber(costCalculatorMinion(state))}
       </Button>
       <br />
       <Button
@@ -212,12 +213,12 @@ const Shop = (props) => {
         onClick={onClickMinionSupervisor}
       >
         <h4 className="minionCount">
-          Supervisors: {state.minionSupervisors}
+          Supervisors: {commaNumber(state.minionSupervisors)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorMinionSupervisor(state)}
+        {commaNumber(costCalculatorMinionSupervisor(state))}
       </Button>
       <br />
       <Button
@@ -228,12 +229,12 @@ const Shop = (props) => {
         onClick={onClickMinionManager}
       >
         <h4 className="minionCount">
-          Managers: {state.minionManagers}
+          Managers: {commaNumber(state.minionManagers)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorMinionManager(state)}
+        {commaNumber(costCalculatorMinionManager(state))}
       </Button>
       <br />
       <Button
@@ -244,12 +245,12 @@ const Shop = (props) => {
         onClick={onClickGrandma}
       >
         <h4 className="minionCount">
-          Badass Grandmas: {state.grandmas}
+          Badass Grandmas: {commaNumber(state.grandmas)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorGrandma(state)}
+        {commaNumber(costCalculatorGrandma(state))}
       </Button>
       <br />
       <Button
@@ -260,12 +261,12 @@ const Shop = (props) => {
         onClick={onClickDad}
       >
         <h4 className="minionCount">
-          Workaholic Dads: {state.dads}
+          Workaholic Dads: {commaNumber(state.dads)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorDad(state)}
+        {commaNumber(costCalculatorDad(state))}
       </Button>
       <br />
       <Button
@@ -276,12 +277,12 @@ const Shop = (props) => {
         onClick={onClickAlien}
       >
         <h4 className="minionCount">
-          Bored Aliens: {state.aliens}
+          Bored Aliens: {commaNumber(state.aliens)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorAlien(state)}
+        {commaNumber(costCalculatorAlien(state))}
       </Button>
       <br />
       <Button
@@ -292,12 +293,12 @@ const Shop = (props) => {
         onClick={onClickAngel}
       >
         <h4 className="minionCount">
-          Traitor Angels: {state.angels}
+          Traitor Angels: {commaNumber(state.angels)}
           <br />
           <br />
         </h4>
         <br />
-        {costCalculatorAngel(state)}
+        {commaNumber(costCalculatorAngel(state))}
       </Button>
     </div>
   );

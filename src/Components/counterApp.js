@@ -83,7 +83,7 @@ saveLockr(state);
         <span className='counterText'>
       {commaNumber(state.counter)}
         </span>
-      <p>CPS: {perSecond()}</p>
+      <p>CPS: {commaNumber(perSecond())}</p>
       </button>
       <br/>
     </div>
