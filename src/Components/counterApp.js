@@ -14,7 +14,7 @@ const Counter = (props) => {
       const idler = () => {
         return res.data.unixtime + 1 - Lockr.get("timeStamp");
       };
-      console.log(idler())
+      // console.log(idler())
       setState((state) => ({
         minions: state.minions,
         counter:
