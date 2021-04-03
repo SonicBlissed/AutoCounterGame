@@ -261,7 +261,7 @@ const Shop = (props) => {
         onClick={onClickDad}
       >
         <h4 className="minionCount">
-          Workaholic Dads: {commaNumber(state.dads)}
+          3,000IQ Pandas: {commaNumber(state.dads)}
           <br />
           <br />
         </h4>
@@ -293,7 +293,7 @@ const Shop = (props) => {
         onClick={onClickAngel}
       >
         <h4 className="minionCount">
-          Traitor Angels: {commaNumber(state.angels)}
+          Robot Angels: {commaNumber(state.angels)}
           <br />
           <br />
         </h4>
