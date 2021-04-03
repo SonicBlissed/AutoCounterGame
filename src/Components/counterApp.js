@@ -14,7 +14,7 @@ const Counter = (props) => {
       const idler = () => {
         return res.data.unixtime + 1 - Lockr.get("timeStamp");
       };
-
+      console.log(idler())
       setState((state) => ({
         minions: state.minions,
         counter:
@@ -101,8 +101,14 @@ const Counter = (props) => {
   }, []);
 
   useEffect(() => {
-    saveLockr(state);
-  }, [state]);
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    sleep(2000).then(()=> {
+
+      saveLockr(state)
+    })
+  },[state]);
 
   const increased = () => {
     if (press === true) {

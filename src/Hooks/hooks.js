@@ -1,5 +1,5 @@
 import Lockr from "lockr";
-import axios from "axios";
+// import axios from "axios";
 
 const setLockrCounter = (state) => {
   Lockr.set("counter", state.counter + 1);
@@ -34,6 +34,14 @@ const setLockrAngel = (state) => {
 };
 
 const saveLockr = (state) => {
+
+  const d = new Date() /1000;
+
+  const timeStamp = () => {
+    return Math.round(d)
+  }
+
+
   Lockr.set("counter", state.counter);
   Lockr.set("minions", state.minions);
   Lockr.set("minionSupervisors", state.minionSupervisors);
@@ -42,10 +50,14 @@ const saveLockr = (state) => {
   Lockr.set("dads", state.dads);
   Lockr.set("aliens", state.aliens);
   Lockr.set("angels", state.angels);
+  Lockr.set("timeStamp", timeStamp())
 
-  axios.get("http://worldtimeapi.org/api/ip").then((res) => {
-    Lockr.set("timeStamp", res.data.unixtime - 1);
-  });
+  // axios.get("http://worldtimeapi.org/api/ip").then((res) => {
+  //   ;
+  //   console.log(`set ${Lockr.get('timeStamp')}`)
+  // }).catch(err => {
+  //   console.log(err)
+  // })
 };
 
 export {
