@@ -1,5 +1,13 @@
+
+
+
+
 .App {
+  background-color: red;
+  height: max-content;
+  width: max-content;
   text-align: center;
+  
 }
 
 
@@ -51,9 +59,9 @@
   9px 9px 0px #017e7f, 
   12px 12px 0px #052939,
   15px 15px 0px #c11a2b; */
-  display: flex;
+  /* display: flex;
   border: solid;
   position: absolute;
-  top: 0px;
+  top: 0px; */
   
 }

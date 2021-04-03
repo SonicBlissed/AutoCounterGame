@@ -17,9 +17,8 @@
 
 .increase {
   position: absolute;
-  left:20%;
+  left:17%;
   top:20%;
-  margin-right: 20px;
   justify-content: center;
   border-radius: 50%; 
   width: 500px;
@@ -58,7 +57,7 @@
     0 8px 6px rgba(0,0,0,.45);
 
     position: absolute;
-    left:20%;
+    left:17%;
     top:20%;
     margin-right: 20px;
     justify-content: center;
@@ -90,19 +89,15 @@
   top: 15%;
 }
 
-
-
-/* .counter_number {
-  font-size: 5rem;
-  text-align: center;
-  color: #fcedd8;
-  font-family: 'Niconne', cursive;
-  font-weight: 700;
-  text-shadow: 1px 1px 0px #eb452b, 
-  3px 3px 0px #efa032, 
-  6px 6px 0px #46b59b, 
-  9px 9px 0px #017e7f, 
-  12px 12px 0px #052939,
-  15px 15px 0px #c11a2b;
+@media(max-width: 480px){
+  .increase{
+    height: 250px;
+    width: 250px;
+  }
+  .increased{
+    height: 250px;
+    width: 250px;
+  }
+ 
 }
- */
+
