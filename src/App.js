@@ -8,14 +8,14 @@ import Lockr from 'lockr';
 
 function App() {
   const [state, setState] = useState({
-    minions: 0 + Lockr.get('minions'),
-    counter: 0 + Lockr.get('counter'),
-    minionSupervisors: 0 + Lockr.get('minionSupervisors'),
-    minionManagers: 0 + Lockr.get('minionManagers'),
-    grandmas: 0 + Lockr.get('grandmas'),
-    dads: 0 + Lockr.get('dads'),
-    aliens: 0 + Lockr.get('aliens'),
-    angels: 0 + Lockr.get('angels'),
+    minions: undefined ? Lockr.get('minions') : 0,
+    counter: undefined ? Lockr.get('counter') : 0,
+    minionSupervisors: undefined ? Lockr.get('minionSupervisors') : 0,
+    minionManagers: undefined ? Lockr.get('minionManagers') : 0,
+    grandmas: undefined ? Lockr.get('grandmas') : 0,
+    dads: undefined ? Lockr.get('dads') : 0,
+    aliens: undefined ? Lockr.get('aliens') : 0,
+    angels: undefined ? Lockr.get('angels') : 0,
   });
   return (
     <div className="App">

@@ -120,14 +120,7 @@ const Counter = (props) => {
 
   const onClickIncrease = () => {
     setState((state) => ({
-      minions: state.minions,
-      counter: state.counter + 1,
-      minionSupervisors: state.minionSupervisors,
-      minionManagers: state.minionManagers,
-      grandmas: state.grandmas,
-      dads: state.dads,
-      aliens: state.aliens,
-      angels: state.angels,
+      ...state, counter: state.counter + 1
     }));
     setLockrCounter(state);
     setPress(true);
