@@ -10,11 +10,10 @@ const Counter = (props) => {
   const [press, setPress] = useState(false);
 
   const onLoad = () => {
-    axios.get("http://worldtimeapi.org/api/ip").then((res) => {
+    axios.get("http://worldtimeapi.org/api/ip").then(res => {
       const idler = () => {
-        return res.data.unixtime + 1 - Lockr.get("timeStamp");
+        return (res.data.unixtime + 1) - Lockr.get("timeStamp");
       };
-      // console.log(idler())
       setState((state) => ({
         minions: state.minions,
         counter:
@@ -35,30 +34,21 @@ const Counter = (props) => {
         angels: state.angels,
       }));
     });
+    
   };
 
   useEffect(() => {
+    axios.get('http://worldtimeapi.org/api/ip')
+    .then(res => {
+      console.log(res.data.unixtime)
+    })
+    .catch(err => {
+      console.log(err)
+    })
     onLoad();
     // eslint-disable-next-line
   }, []);
 
-  // useEffect(() => {
-  //   console.log(idler())
-  // setState((state) => ({
-  //   minions: state.minions,
-  //     counter: (state.minions + (state.minionSupervisors*3) + (state.minionManagers * 9) +
-  //     (state.grandmas * 18) +
-  //     (state.dads * 36) +
-  //     (state.aliens * 72) +
-  //     (state.angels * 144))*idler()+(state.counter),
-  //     minionSupervisors: state.minionSupervisors,
-  //     minionManagers: state.minionManagers,
-  //     grandmas: state.grandmas,
-  //     dads: state.dads,
-  //     aliens: state.aliens,
-  //     angels: state.angels,
-  // }))
-  // },[])
 
   const perSecond = () => {
     return (

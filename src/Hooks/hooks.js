@@ -1,5 +1,4 @@
 import Lockr from "lockr";
-// import axios from "axios";
 
 const setLockrCounter = (state) => {
   Lockr.set("counter", state.counter + 1);
@@ -52,13 +51,7 @@ const saveLockr = (state) => {
   Lockr.set("angels", state.angels);
   Lockr.set("timeStamp", timeStamp())
 
-  // axios.get("http://worldtimeapi.org/api/ip").then((res) => {
-  //   ;
-  //   console.log(`set ${Lockr.get('timeStamp')}`)
-  // }).catch(err => {
-  //   console.log(err)
-  // })
-};
+}
 
 export {
   setLockrCounter,
