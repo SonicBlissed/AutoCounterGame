@@ -5,7 +5,6 @@ import PersistentDrawerRight from './Components/drawer';
 import Lockr from 'lockr';
 
 
-
 function App() {
   const [state, setState] = useState({
     minions: Lockr.get('minions') || 0,
@@ -17,6 +16,9 @@ function App() {
     aliens: Lockr.get('aliens') || 0,
     angels: Lockr.get('angels') || 0,
   });
+  console.log(state.counter)
+
+
   return (
     <div className="App">
       <header className="App-header">

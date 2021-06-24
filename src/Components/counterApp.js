@@ -8,12 +8,14 @@ let commaNumber = require("comma-number");
 const Counter = (props) => {
   const { state, setState } = props;
   const [press, setPress] = useState(false);
-
+  //52
   const onLoad = () => {
     axios.get("http://worldtimeapi.org/api/ip").then(res => {
       const idler = () => {
-        return (res.data.unixtime + 1) - Lockr.get("timeStamp");
+
+        return res.data.unixtime + 2 - (Lockr.get("timeStamp") || 0);
       };
+      
       setState((state) => ({
         minions: state.minions,
         counter:
@@ -37,18 +39,7 @@ const Counter = (props) => {
     
   };
 
-  useEffect(() => {
-    axios.get('http://worldtimeapi.org/api/ip')
-    .then(res => {
-      console.log(res.data.unixtime)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-    onLoad();
-    // eslint-disable-next-line
-  }, []);
-
+  
 
   const perSecond = () => {
     return (
@@ -118,6 +109,11 @@ const Counter = (props) => {
       setPress(false);
     }, 1000);
   };
+
+  useEffect(() => {
+    onLoad();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="counter">
