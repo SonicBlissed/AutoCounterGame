@@ -16,7 +16,6 @@ function App() {
     aliens: Lockr.get('aliens') || 0,
     angels: Lockr.get('angels') || 0,
   });
-  console.log(state.counter)
 
 
   return (
