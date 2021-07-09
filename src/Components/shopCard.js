@@ -41,14 +41,8 @@ const Shop = (props) => {
       console.log(`you don't have ${costCalculatorMinion(state)} to spend`);
     } else {
       setState((state) => ({
-        minions: state.minions + 1,
-        counter: state.counter - costCalculatorMinion(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas,
-        dads: state.dads,
-        aliens: state.aliens,
-        angels: state.angels,
+        ...state, minions: state.minions + 1,
+        counter: state.counter - costCalculatorMinion(state)
       }));
       setLockrMinions(state);
       Lockr.set("counter", state.counter - costCalculatorMinion(state));
@@ -62,14 +56,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorMinionSupervisor(state),
-        minionSupervisors: state.minionSupervisors + 1,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas,
-        dads: state.dads,
-        aliens: state.aliens,
-        angels: state.angels,
+        ...state, counter: state.counter - costCalculatorMinionSupervisor(state),
+        minionSupervisors: state.minionSupervisors + 1
       }));
       setLockrMinionSupervisor(state);
       Lockr.set(
@@ -86,14 +74,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorMinionManager(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers + 1,
-        grandmas: state.grandmas,
-        dads: state.dads,
-        aliens: state.aliens,
-        angels: state.angels,
+       ...state, counter: state.counter - costCalculatorMinionManager(state),
+       minionManagers: state.minionManagers + 1,
       }));
       setLockrMinionManager(state);
       Lockr.set("counter", state.counter - costCalculatorMinionManager(state));
@@ -107,14 +89,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorGrandma(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas + 1,
-        dads: state.dads,
-        aliens: state.aliens,
-        angels: state.angels,
+        ...state, counter: state.counter - costCalculatorGrandma(state),
+        grandmas: state.grandmas + 1
       }));
       setLockrGrandma(state);
       Lockr.set("counter", state.counter - costCalculatorGrandma(state));
@@ -128,14 +104,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorDad(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas,
-        dads: state.dads + 1,
-        aliens: state.aliens,
-        angels: state.angels,
+        ...state, counter: state.counter - costCalculatorDad(state),
+        dads: state.dads + 1
       }));
       setLockrDad(state);
       Lockr.set("counter", state.counter - costCalculatorDad(state));
@@ -149,14 +119,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorAlien(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas,
-        dads: state.dads,
-        aliens: state.aliens + 1,
-        angels: state.angels,
+        ...state, counter: state.counter - costCalculatorAlien(state),
+        aliens: state.aliens + 1
       }));
       setLockrAlien(state);
       Lockr.set("counter", state.counter - costCalculatorAlien(state));
@@ -170,14 +134,8 @@ const Shop = (props) => {
       );
     } else {
       setState((state) => ({
-        minions: state.minions,
-        counter: state.counter - costCalculatorAngel(state),
-        minionSupervisors: state.minionSupervisors,
-        minionManagers: state.minionManagers,
-        grandmas: state.grandmas,
-        dads: state.dads,
-        aliens: state.aliens,
-        angels: state.angels + 1,
+        ...state, counter: state.counter - costCalculatorAngel(state),
+        angels: state.angels + 1
       }));
       setLockrAngel(state);
       Lockr.set("counter", state.counter - costCalculatorAngel(state));
