@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { setLockrCounter, saveLockr } from "../Hooks/hooks";
 let commaNumber = require("comma-number");
 
+
 const Counter = (props) => {
   const { state, setState } = props;
   const [press, setPress] = useState(false);
