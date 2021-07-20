@@ -23,7 +23,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       <PersistentDrawerRight state={state} setState={setState}/>
-      <HeroCards state={state} setState={setState}/>
+      {/* will be added when ready */}
+      {/* <HeroCards state={state} setState={setState}/> */}
       <Counter state={state} setState={setState}/>
       </header>
     </div>
