@@ -11,9 +11,11 @@ const Counter = (props) => {
   const [press, setPress] = useState(false);
   //52
   const onLoad = () => {
-    axios.get("http://worldtimeapi.org/api/ip").then((res) => {
+    axios.get("http://worldtimeapi.org/api/ip")
+    .then( res => {
+    console.log(res.data.unixtime)
       const idler = () => {
-        return res.data.unixtime + 2 - (Lockr.get("timeStamp") || 0);
+      return res.data.unixtime + 2 - (Lockr.get("timeStamp") || 0);
       };
 
       setState((state) => ({
@@ -28,7 +30,8 @@ const Counter = (props) => {
           idler() +
         state.counter
       }));
-    });
+    })
+    .catch(err => {console.log(err.message)})
   };
 
   const perSecond = () => {

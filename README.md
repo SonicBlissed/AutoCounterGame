@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Auto Counter Game
+---
+### Hi there, I'm Dustin a.k.a. SonicBliss!
+### Thank you for taking the time to look over my Auto Counter Game!
+[![Link](https://img.shields.io/badge/-Live%20Version-red)](https://counterthatkeepsoncounting.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+---
+The Auto Counter Game is a game I've made for me, and by me. The thing I'm most proud of is that this game runs almost entirely with React useState. I made this project with the intention to iron out my skills and trial and error different methods. You'll see a wide array of techniques in the code. 
 
-## Available Scripts
+## Goals Reached
+---
+- One useState handles all the state
+- useEffect timestamps and saves progress every second
+- It counts while you're offline!
+- Integrated MaterialUI to make it look better
+- Refactored the code drastically to make a smaller, cleaner app
+- Added Lockr to securely store and access information with local storage so your progress saves!
+- Added anti cheat solutions (beware they punish you forever mwhuahahaha)
 
-In the project directory, you can run:
+## Current Goals
+---
+- Convert existing CSS to re-usable styled components
+- After converting to re-usable style components, add more CSS to make the app much more appealing to the eyes
+- Make my own API to keep track of time instead of worldtimeapi.org
+- Add comments to better illustrate how the code flows to others
+- Add bosses to slay that consume a random amount of workers in exchange for multipliers!
 
-### `npm start`
+## FAQ
+---
+>Why is there such a lack of comments?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project's main focus when I started it was to learn more about React and become better with React when it's used in an unconventional way. By not having comments I'm forcing my brain to remember all the steps I had taken to get my code where it is and thus familiarizing with it on a deeper level each time I go back and look. This was not made with the intention to show others. I will be adding comments based on questions I get in the future on my code going forward 
+>Why is it so...red?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I'm not the greatest when it comes to art in general. Here's a good analogy: I'm not good at drawing but boy am I good at tracing. That's not to say I'm not striving to get better. One way I've been trying to improve my "art senses" is by learning Photoshop. Here's an example of my work if you're interested: https://i.ibb.co/5r1bpcW/Ekko-Sig-EDITTED.png
+>I'm getting an error in the console because the API isn't working
 
-### `npm test`
+This is an issue I'm working on. If you copy this code to run on your local machine then you wont run into problems with the api. It's caused by the fact that the live website is https but the api is http. I've managed to get it working in the past with a quick work around but I'm currently looking for a more permanent solution.
+>I have some feedback/questions about this app, where do I send it?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Forward it to this email: mimirs.spring@gmail.com

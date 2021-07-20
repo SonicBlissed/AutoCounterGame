@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from 'react';
 import PersistentDrawerRight from './Components/drawer';
 import Lockr from 'lockr';
+import HeroCards from './Components/heroCards';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <PersistentDrawerRight state={state} setState={setState}/>
+      <HeroCards state={state} setState={setState}/>
       <Counter state={state} setState={setState}/>
       </header>
     </div>
