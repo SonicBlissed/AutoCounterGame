@@ -88,7 +88,9 @@ const Counter = (props) => {
   }, []);
   //6. This useEffect saves your progress every 2 seconds. It isn't every
   // second because I felt it was unnecessary and it ran smoother doing 
-  //it every 2 seconds
+  //it every 2 seconds, not to mention it saves everytime state is 
+  //updated anyways. It's redundant to prevent users from changing 
+  //localstorage and cheating
   useEffect(() => {
     function sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
