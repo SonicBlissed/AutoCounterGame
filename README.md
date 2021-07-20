@@ -40,3 +40,4 @@ This is an issue I'm working on. If you copy this code to run on your local mach
 >I have some feedback/questions about this app, where do I send it?
 
 Forward it to this email: mimirs.spring@gmail.com
+I'm also very open to code walkthroughs to explain every nook and cranny of the app if you're a potential employer.
