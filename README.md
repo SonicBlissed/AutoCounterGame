@@ -6,6 +6,17 @@
 ## Overview
 The Auto Counter Game is a game I've made for me, and by me. The thing I'm most proud of is that this game runs almost entirely with React useState. I made this project with the intention to iron out my skills and trial and error different methods. You'll see a wide array of techniques in the code. 
 
+## How To Play
+- It's simple! Start out by clicking the big red button a few times!
+- You'll notice your points increasing, now you can use them to buy workers that will gather points for you every second! The amount they gather for you per second is right underneath your points and is labeled CPS
+- Expand and grow your points, increasing your CPS exponentially overtime as you buy more and more expensive workers
+
+## Dependancies
+- Lockr - This was installed with `npm i Lockr` and it makes it easier for me to set data to local storage, as well as retrieve it.
+- commaNumber - This was installed with `npm i commaNumber` and offers me a sweet function to automatically input commas to any number I give it. For example if I do commaNumber(7465) it will return 7,465
+- React - This was already in my app because I started this project with `npx create-react-app project-name` and it's my framework of choice so that I have access to React Hooks and components
+- Axios - This is what I use to make AJAX requests and was installed with `npm i axios`
+
 ## Goals Reached
 - One useState handles all the state
 - useEffect timestamps and saves progress every second
