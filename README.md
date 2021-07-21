@@ -37,6 +37,9 @@ The Auto Counter Game is a game I've made for me, and by me. The thing I'm most 
 >Why is there such a lack of comments?
 
 This project's main focus when I started it was to learn more about React and become better with React when it's used in an unconventional way. By not having comments I'm forcing my brain to remember all the steps I had taken to get my code where it is and thus familiarizing with it on a deeper level each time I go back and look. This was not made with the intention to show others. I will be adding comments based on questions I get in the future on my code going forward 
+>Is mobile support coming?
+
+Yes! I actually have a previous commit I've made to this project to make it fully functional on any device. I overwrote it on accident at some point and will re instate mobile support after I finish adding a few more features.
 >Why is it so...red?
 
 I'm not the greatest when it comes to art in general. Here's a good analogy: I'm not good at drawing but boy am I good at tracing. That's not to say I'm not striving to get better. One way I've been trying to improve my "art senses" is by learning Photoshop. Here's an example of my work if you're interested: https://i.ibb.co/5r1bpcW/Ekko-Sig-EDITTED.png
